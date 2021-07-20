@@ -6,7 +6,7 @@ const express = require("express"),
   app = express(),
   port = process.env.PORT;
 
-app.use(cors());
+app.use(cors({ origin: '*'}));
 
 app.get("/schedule/:movie/:localization", async (req, res) => {
   const { movie, localization } = req.params,
