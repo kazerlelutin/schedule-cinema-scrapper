@@ -2,8 +2,11 @@ require("dotenv").config();
 
 const express = require("express"),
   puppeteer = require("puppeteer"),
+  cors = require('cors')
   app = express(),
   port = process.env.PORT;
+
+app.use(cors());
 
 app.get("/schedule/:movie/:localization", async (req, res) => {
   const { movie, localization } = req.params,
