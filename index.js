@@ -7,7 +7,7 @@ const express = require("express"),
 
 app.get("/schedule/:movie/:localization", async (req, res) => {
   const { movie, localization } = req.params,
-    browser = await puppeteer.launch(),
+    browser = await puppeteer.launch({args: ['--no-sandbox']}),
     page = await browser.newPage();
   await page.goto(
     `https://www.google.com/search?q=s%C3%A9ance+cin%C3%A9ma+${movie}+${localization}`
