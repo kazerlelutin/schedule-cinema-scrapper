@@ -6,6 +6,7 @@ FROM base AS dependencies
 
 COPY package*.json ./
 
+RUN apt install chromium
 RUN npm install
 
 WORKDIR /app
